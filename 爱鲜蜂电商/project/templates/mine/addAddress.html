@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收货地址</title>
+</head>
+<body>
+<input type="button" name=”Submit” onclick="javascript:window.location.href='/addresses/'" value=返回>
+<div class="main">
+    <form class="edit-form block" method="post" action="/addaddress/">
+        {% csrf_token %}
+        <table class="addr-edit" width="100%">
+            <tbody>
+            <tr class="theme-spline spline-list">
+                <th>联系人</th>
+                <td>
+                    <input class="addr-input" type="text" name="name" value="" maxlength="30"
+                           placeholder="收货人姓名">
+                </td>
+            </tr>
+            <tr class="row-city theme-spline spline-list">
+                <th>性别</th>
+                <td class="more">
+                    <select class="addr-city-select keyboard-fix" name="sex" >
+                        <option value="">请选择性别</option>
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select></td>
+            </tr>
+            <tr class="row-phone theme-spline spline-list">
+                <th>手机号码</th>
+                <td>
+                    <input class="addr-input keyboard-fix" type="tel" name="telphone" value="" placeholder="鲜蜂侠联系您的电话"
+                           maxlength="11">
+                </td>
+            </tr>
+{#            <tr class="row-addrdetail theme-spline spline-list">#}
+{#                <th>收货地址</th>#}
+{#                <td>#}
+{#                    <input class="addr-input keyboard-fix" type="text" name="address_1" value=""#}
+{#                           placeholder="请输入收货地址">#}
+{#                </td>#}
+{#            </tr>#}
+            <tr class="row-city theme-spline spline-list">
+                <th>所在省份</th>
+                <td class="more">
+                     <input class="addr-input keyboard-fix" type="text" name="address_2" value=""
+                           placeholder="输入所在的省份">
+{#                    <select class="addr-city-select keyboard-fix" name="city_id">#}
+{#                        <option value="">请选择城市</option>#}
+{#                        <option value="2">北京市</option>#}
+{#                        <option value="22">上海市</option>#}
+{#                        <option value="43">天津市</option>#}
+{#                        <option value="424">广州市</option>#}
+{#                        <option value="442">佛山市</option>#}
+{#                        <option value="524">深圳市</option>#}
+{#                        <option value="926">廊坊市</option>#}
+{#                        <option value="2590">成都市</option>#}
+{#                        <option value="3134">杭州市</option>#}
+{#                        <option value="3268">三河市</option>#}
+{#                    </select>#}
+                </td>
+            </tr>
+
+            <tr class="row-addrdetail theme-spline spline-list">
+                <th>城市</th>
+                <td>
+                    <input class="addr-input keyboard-fix" type="text" name="address_3" value=""
+                           placeholder="输入所在的城市">
+                </td>
+            </tr>
+            <tr class="row-addrdetail theme-spline spline-list">
+                <th>区县</th>
+                <td>
+                    <input class="addr-input keyboard-fix" type="text" name="address_4" value=""
+                           placeholder="输入所在的区县">
+                </td>
+            </tr>
+            <tr class="row-addrdetail theme-spline spline-list">
+                <th>街道</th>
+                <td>
+                    <input class="addr-input keyboard-fix" type="text" name="address_5" value=""
+                           placeholder="输入所在街道">
+                </td>
+            </tr>
+            <tr class="row-addrdetail theme-spline spline-list">
+                <th>详细地址</th>
+                <td>
+                    <input class="addr-input keyboard-fix" type="text" name="address_6" value=""
+                           placeholder="请输入楼号门牌号等详细信息">
+                </td>
+            </tr>
+             <tr class="row-addrdetail theme-spline spline-list">
+                <th>邮编</th>
+                <td>
+                    <input class="addr-input keyboard-fix" type="text" name="postCode" value=""
+                           placeholder="请输入邮编">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="submit">点击提交</button>
+    </form>
+
+
+    <div class="edit-del-wrap">
+        <div class="edit-del theme-btn-light tap-action" data-tap="del" style="display: none;">删除地址</div>
+    </div>
+</div>
+
+
+</body>
+</html>
+<style>
+.tap-action{
+    margin: .9rem 20%;
+    height: 3.7rem;
+    line-height: 3.7rem;
+    text-align: center;
+    font-size: 4rem;
+    color: #000;
+    background-color: #ffd600;
+    position:absolute;
+    left: 200px;
+    bottom:10px;
+}
+.div1{
+     float : left;
+}
+.div2{
+     float : right;
+}
+ div {
+    display: block;
+     font-size: 50px;
+}
+
+
+
+
+table {
+     width: 100%;
+    display: table;
+    border-color: grey;
+}
+    tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+        font-size: 100px;
+}
+    td, th {
+ font-size: 50px;
+        height:100px;
+    display: table-cell;
+    vertical-align: inherit;
+}option{
+    font-size: 60px;
+    width:300px;
+         height:111px
+     }
+     textarea, select, button{
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+           text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font-size: 60px;
+        width:300px;
+        height:111px
+    }
+
+input{
+    width:300px;
+    height:80px;
+    font-size: 30px;
+}
+</style>
