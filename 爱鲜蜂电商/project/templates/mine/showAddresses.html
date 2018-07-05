@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地址</title>
+</head>
+<body>
+<input type="button" name=”Submit” onclick="javascript:window.location.href='/mine/'" value=返回>
+<ul>
+                    {% for item in addresses %}
+                    <li>
+                            <article class="shoppingInfo">
+                                <h6>{{ item.name }}</h6>
+                                <h6>{{ item.phoneNum }}</h6>
+                                <h6>{{ item.address }}</h6>
+                            </article>
+
+                    </li>
+                {% endfor %}
+                </ul>
+
+    <a href="/addaddress/"><div class="tap-action">新增地址</div></a>
+
+</body>
+</html>
+
+<style>
+.shoppingInfo{
+    font-size: 100px;
+}
+    .tap-action{
+    margin: .9rem 20%;
+    height: 3.7rem;
+    line-height: 3.7rem;
+    text-align: center;
+    font-size: 4rem;
+    color: black;
+    background-color: #ffd600;
+
+
+}
+    .shoppingInfo {
+  width: 4.6rem;
+  float: left;
+  font-size: 3rem; }
+
+  {#  .shoppingInfo h6 {#}
+  {#margin: 0.1rem 0 0;#}
+  {#overflow: hidden;#}
+  {#text-overflow: ellipsis;#}
+  {#height: 0.5rem;#}
+  {#white-space: nowrap;#}
+  {#font-weight: 500;#}
+  {#font-size: 0.01rem; }#}
+     div {
+        display: block;
+        font-size: 50px;
+          position:absolute;
+    left: 200px;
+    bottom:100px;
+    }
+input{
+    width:300px;
+    height:80px;
+    font-size: 30px;
+}
+</style>
